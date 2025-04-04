@@ -28,3 +28,4 @@ To accomplish this task, we are using the Principal Component Analysis (PCA) cap
 
 Moving on, for each number of components ((2-18) since we have 18 statistics), we create a PCA object with n number of components and fit our data to the object, and transform it. Once the data is transformed, we can use PCA operations to access the variance for each number of components! Plotting the variance per component, we get a graph like this:
 
+<img src="assets/evr_per_component.png" alt="Variance Per Component Plot" width="500" />
