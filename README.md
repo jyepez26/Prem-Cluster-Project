@@ -12,3 +12,16 @@ In other cases, I may have needed a complete other step to do a missing values a
 
 ## Clustering
 ### Determine Best Number of Components
+The first step in the clustering process is to determine the best number of components to use from the features that finds the right balance between an expected variance ratio closer to 1 and not overfitting. To determine this number, we must conduct an analysis using our data.
+##### Step One: Standardize Data
+Our first step in this process is to use the SKlearn StandardScaler preprocessor to standardize our data within each statistic/column. Here is the code I used to accomplish this:
+```
+df_features = list(df.columns)
+X = df.loc[: , df_features].values
+X = StandardScaler().fit_transform(X)
+```
+Now, X is an array with each element being a list that contains all the standardized values for a specific feature. The reason that this step is necessary instead of just using the original data, is that standardizing the data puts all the features on the same scale so that our analysis and SKlearn machine learning processes can work more accurately.
+##### Step 2: Find Variance for Different Components
+Now that we have standardized our data, we want to find the variance for different number of components. In this context, a good variance value is one that is somewhat close to 1, because our "explained variance ratio" indicates the proportion of total variance represented by that number of components. Therefore, we want to find a component number that is close to 1, but once the increase in variance between components barely changes, then adding more components doesn't help too much. So we want to find the number of components right in the sweet spot.
+
+To accomplish this task, we are using the SKlearn PCA module which gives us the variance for each number of components when fit to our data.
