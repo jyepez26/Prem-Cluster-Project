@@ -24,4 +24,7 @@ Now, X is an array with each element being a list that contains all the standard
 ##### Step 2: Find Variance for Different Components
 Now that we have standardized our data, we want to find the variance for different number of components. In this context, a good variance value is one that is somewhat close to 1, because our "explained variance ratio" indicates the proportion of total variance represented by that number of components. Therefore, we want to find a component number that is close to 1, but once the increase in variance between components barely changes, then adding more components doesn't help too much. So we want to find the number of components right in the sweet spot.
 
-To accomplish this task, we are using the SKlearn PCA module which gives us the variance for each number of components when fit to our data.
+To accomplish this task, we are using the Principal Component Analysis (PCA) capabilities from the SKlearn decomposition module which gives us the variance for each number of components when fit to our data. **If you are interested in what exactly the PCA is you can check out the documentation page: https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html**. 
+
+Moving on, for each number of components ((2-18) since we have 18 statistics), we create a PCA object with n number of components and fit our data to the object, and transform it. Once the data is transformed, we can use PCA operations to access the variance for each number of components! Plotting the variance per component, we get a graph like this:
+
