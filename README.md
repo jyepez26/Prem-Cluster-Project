@@ -44,11 +44,11 @@ From this variance analysis using PCA, we were able to conclude that a good numb
 ### Determine Best Number of Clusters
 #### Step 1: Declare PCA Object
 Our first step to achieving our optimal cluster number is to declare a PCA object on our optimal number of components we determined in the last section: n-components=10. We then fit it to our standardized data and transform it, then assiging it to a dataframe. The code to accomplish this looks like this
-'''
+```
 pca = PCA(n_components=10)
 components = pca.fit_transform(X)
 pca_df = pd.DataFrame(components, columns=column_list)
 pca_df.insert(0, 'Player', df.index)
-'''
+```
 which gives us a dataframe title `pca_df` that looks like this, where each column represents a PCA component:
 <table border="1" class="dataframe"><thead><tr style="text-align: right;"><th></th><th>Player</th><th>PC 1</th><th>PC 2</th><th>PC 3</th><th>PC 4</th><th>PC 5</th><th>PC 6</th><th>PC 7</th><th>PC 8</th><th>PC 9</th><th>PC 10</th></tr></thead><tbody><tr><th>0</th><td>Mohamed Salah</td><td>9.350887</td><td>2.706413</td><td>-5.080035</td><td>2.323063</td><td>-3.219928</td><td>-1.438530</td><td>1.976336</td><td>0.054462</td><td>-1.274589</td><td>1.200886</td></tr><tr><th>1</th><td>Erling Haaland</td><td>3.703837</td><td>5.414055</td><td>-0.685074</td><td>0.369525</td><td>0.279154</td><td>-0.583478</td><td>-0.960898</td><td>-2.341696</td><td>0.904995</td><td>-2.137506</td></tr><tr><th>2</th><td>Alexander Isak</td><td>3.714020</td><td>4.295657</td><td>-1.159028</td><td>-0.443460</td><td>0.077417</td><td>-0.507819</td><td>-1.224488</td><td>-0.435646</td><td>0.263161</td><td>0.102821</td></tr><tr><th>3</th><td>Chris Wood</td><td>2.133712</td><td>6.358634</td><td>0.027517</td><td>-2.339769</td><td>1.947023</td><td>-2.119763</td><td>0.377086</td><td>0.310802</td><td>0.525561</td><td>0.576193</td></tr><tr><th>4</th><td>Matheus Cunha</td><td>5.627382</td><td>-2.978258</td><td>-0.827876</td><td>-1.287034</td><td>1.531212</td><td>0.113383</td><td>-0.372820</td><td>0.461905</td><td>-0.529903</td><td>-2.279014</td></tr></tbody></table>
