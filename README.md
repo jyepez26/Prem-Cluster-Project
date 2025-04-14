@@ -75,5 +75,7 @@ df_cluster['Cluster'] = y_kmeans
 Now we have a dataframe called df_cluster that has each forward in the premier league and which cluster they belong to! The first few rows look like this:
 <table border="1" class="dataframe"><thead><tr style="text-align: right;"><th></th><th>Player</th><th>Cluster</th></tr></thead><tbody><tr><th>0</th><td>Mohamed Salah</td><td>2</td></tr><tr><th>1</th><td>Erling Haaland</td><td>1</td></tr><tr><th>2</th><td>Alexander Isak</td><td>1</td></tr><tr><th>3</th><td>Chris Wood</td><td>1</td></tr><tr><th>4</th><td>Matheus Cunha</td><td>2</td></tr></tbody></table>
 
+As we can see, Haaland and Isak are in the same cluster and Salah and Cunha are in the same cluster which makes sense to me! Looking through all the clusters they make a lot of sense, so we did a good job of choosing appropriate numbers of components and clusters. Super cool!
+
 ### Conclusion
 Now that we've created our clusters, the next step is up to my own soccer knowledge! I have to determine the type of players that end up in each cluster using both statistics and what I've seen of the players. I will name each category based on the player traits and playstyle and display advanced statistics for each group!
