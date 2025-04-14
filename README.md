@@ -59,3 +59,21 @@ While the code is simple, the acutal PCA computation is quite complex, as it car
 #### Step 2: Find Silhoutte Score for Different Number of Clusters
 First, we convert the component columns of our `pca_df` into a numpy column stack. We then need to find a score for different number of clusters fit on our data. For determining clusters we will use Sklearn's KMeans algorithm, and for determing the score of those clusters we will be using their silhoutte score. To accomplish this we build a for loop where we create n_clusters using KMeans and then find the sihloutte score of that clustering, for 2-19 clusters. We can then plot our sihloutte scores to analyze our cluster numbers: 
 <img src="assets/silhouette_score_plot.png" alt="Silhouette Score Plot" width="500" />
+#### Step 3: Determine Ideal Number of Clusters
+There are many ways to interpret this graph, but for our purposes we are just going to choose the cluster number with the highest silhouette score: 5 clusters! I actually tried using other n_cluster values I determined from different methods for the cluster number used for the final clustering of the players, but I realized that there wasn't a need for so many clusters given that the dataset is relatively small. Therefore, 5 clusters is the perfect amount for analysis, as it is rather small and has the best silhouette score we found!
+
+### Create Clusters
+The final step of the clustering process is to create the clusters using our best determined number of clusters! Accomplishing this is very simple; we just use SKlearn's KMeans algorithm using 5 as our n_clusters and fit it to our data! Our code to accomplish this and turn it into a dataframe looks like this:
+```
+kmeans = KMeans(n_clusters=5, random_state=1)
+kmeans.fit(x)
+y_kmeans = kmeans.predict(x)
+df_cluster = pd.DataFrame()
+df_cluster['Player'] = df.index
+df_cluster['Cluster'] = y_kmeans
+```
+Now we have a dataframe called df_cluster that has each forward in the premier league and which cluster they belong to! The first few rows look like this:
+<table border="1" class="dataframe"><thead><tr style="text-align: right;"><th></th><th>Player</th><th>Cluster</th></tr></thead><tbody><tr><th>0</th><td>Mohamed Salah</td><td>2</td></tr><tr><th>1</th><td>Erling Haaland</td><td>1</td></tr><tr><th>2</th><td>Alexander Isak</td><td>1</td></tr><tr><th>3</th><td>Chris Wood</td><td>1</td></tr><tr><th>4</th><td>Matheus Cunha</td><td>2</td></tr></tbody></table>
+
+### Conclusion
+Now that we've created our clusters, the next step is up to my own soccer knowledge! I have to determine the type of players that end up in each cluster using both statistics and what I've seen of the players. I will name each category based on the player traits and playstyle and display advanced statistics for each group!
