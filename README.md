@@ -63,7 +63,7 @@ First, we convert the component columns of our `pca_df` into a numpy column stac
 There are many ways to interpret this graph, but for our purposes we are just going to choose the cluster number with the highest silhouette score: 5 clusters! I actually tried using other n_cluster values I determined from different methods for the cluster number used for the final clustering of the players, but I realized that there wasn't a need for so many clusters given that the dataset is relatively small. Therefore, 5 clusters is the perfect amount for analysis, as it is rather small and has the best silhouette score we found!
 
 ### Create Clusters
-The final step of the clustering process is to create the clusters using our best determined number of clusters! Accomplishing this is very simple; we just use SKlearn's KMeans algorithm using 5 as our n_clusters and fit it to our data! Our code to accomplish this and turn it into a dataframe looks like this:
+The final step of the clustering process is to create the clusters using our best determined number of clusters! Accomplishing this is very simple; we just use SKlearn's KMeans algorithm using 5 as our n_clusters and fit it to our data and use that to predict the clusters for our players! Our code to accomplish this and turn our predictions into a dataframe looks like this:
 ```
 kmeans = KMeans(n_clusters=5, random_state=1)
 kmeans.fit(x)
