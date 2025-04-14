@@ -58,4 +58,4 @@ While the code is simple, the acutal PCA computation is quite complex, as it car
 
 #### Step 2: Find Silhoutte Score for Different Number of Clusters
 First, we convert the component columns of our `pca_df` into a numpy column stack. We then need to find a score for different number of clusters fit on our data. For determining clusters we will use Sklearn's KMeans algorithm, and for determing the score of those clusters we will be using their silhoutte score. To accomplish this we build a for loop where we create n_clusters using KMeans and then find the sihloutte score of that clustering, for 2-19 clusters. We can then plot our sihloutte scores to analyze our cluster numbers: 
-<img src="assets/component_deriv.png" alt="Component Rate of Change Plot" width="500" />
+<img src="assets/silhouette_score_plot.png" alt="Silhouette Score Plot" width="500" />
