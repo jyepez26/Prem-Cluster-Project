@@ -31,14 +31,14 @@ Moving on, for each number of components ((2-18) since we have 18 statistics), w
 
 <img src="assets/evr_per_component.png" alt="Variance Per Component Plot" width="500" />
 
-#### Step 4: Analyze Change in Variance, Make Decision
+#### Step 3: Analyze Change in Variance, Make Decision
 It is hard to determine the best component simply from this graph, so I also created a plot displaying the difference in variance from component to component. This allows us to see the last areas where the increase in variance is still substantial, which is our key to selecting the component number. This is what that plot looks like:
 
 <img src="assets/component_deriv.png" alt="Component Rate of Change Plot" width="500" />
 
 From this graph, using the common elbow method, we can see that at n=10, there is still one more solid change in variance, and then begins to flatten out past that. If we look at our variance values, we see that at n_components=10, the explained variance ratio is 0.942406892839495, with a change in variance of about 0.02 from 9 components. After n_components=10, the change in variance values are all around 0.01 or below. Therefore, we can settle for a variance of 0.94 which is very solid, since adding more components will likely only hurt our model.
 
-#### Step 5: Transform Our Data with PCA Using Best Component Value
+#### Step 4: Transform Our Data with PCA Using Best Component Value
 From this variance analysis using PCA, we were able to conclude that a good number of components to use is 10! This does not necessarily mean that 10 was the only value we could use, but based on my judgement it is the most ideal number to use. We now create a PCA object with n_components=10 and fit it to our data add transform the data. We then add our PCA values to a dataframe named pca_df to use for our clustering process in the next step.
 
 ### Determine Best Number of Clusters
