@@ -1,0 +1,50 @@
+body {
+    /* Set line height to 1.5 times the font size
+         and use the OS’s UI font as the website font
+       */
+    font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin-inline: max(1em, (100% - 100ch) / 2);
+  }
+  h1{
+    font-size: 300%;
+    line-height: 1.1;
+    text-wrap: balance;
+    text-align: center;
+  }
+  .image{
+    max-width: 100%;
+    height: auto;
+  }
+  :root{
+    --turqouise: rgb(64, 224, 208);
+  }
+  html{
+    accent-color: var(--turqouise);
+  }
+  nav{
+    display: flex;
+  }
+  a{
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding: 0.5em;
+    margin-bottom: auto;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: oklch(80% 3% 200);
+  }
+  .Cluster{
+    flex: 1;
+    border-bottom-width: 0.4em;
+    border-bottom-color: rgb(0,191,255);
+    padding-bottom: 0.202em;
+  }
+  a:hover{
+    border-bottom-width: 0.4em;
+    border-bottom-color: rgb(102, 51, 153);
+    padding-bottom: 0.202em;
+    background-color: oklch(from var(--turqouise) 95% 5% h)
+  }
