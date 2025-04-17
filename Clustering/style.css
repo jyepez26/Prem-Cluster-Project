@@ -3,14 +3,48 @@ body {
          and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
+    font-family:serif;
     max-width: 100ch;
     margin-inline: max(1em, (100% - 100ch) / 2);
   }
+  img{
+    max-width: 100%;
+    height: auto;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 5px;
+  }
   h1{
     font-size: 300%;
-    line-height: 1.1;
+    line-height: 1.0;
     text-wrap: balance;
     text-align: center;
+  }
+  h2{
+    font-size: 200%;
+    text-wrap: balance;
+    text-align: left;
+    border-bottom-style: solid;
+    border-width: 0.2ch;
+    border-color: rgb(102, 51, 153);
+  }
+  h3{
+    font-size: 150%;
+    text-wrap: balance;
+    text-align: center;
+    background-color: oklch(from var(--turqouise) 95% 5% h);
+    border-bottom-style:solid;
+    border-width: 0.1ch;
+    border-color: rgb(0,191,255);
+  }
+  h4{
+    font-size: 120%;
+    display: inline-block;
+    text-wrap: balance;
+    text-align: center;
+    border-bottom-style:solid;
+    border-width: 0.15ch;
+    border-color: rgb(0, 0, 0);
   }
   .image{
     max-width: 100%;
@@ -47,4 +81,39 @@ body {
     border-bottom-color: rgb(102, 51, 153);
     padding-bottom: 0.202em;
     background-color: oklch(from var(--turqouise) 95% 5% h)
+  }
+  a:not([type="nav"]){
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding: 0.1em;
+    margin-bottom: auto;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: red;
+  }
+  a:hover:not([type="nav"]){
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(102, 51, 153);
+    padding-bottom: 0.1em;
+    background-color: oklch(from var(--turqouise) 99% 5% h)
+  }
+  th{
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 100%);
+  padding: 5px;
+  color: #343434;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 110%;
+  border:2px solid #e0e0e0;
+  text-align:left !important;
+  }
+  td{
+    font-family: inherit;
+  }
+  .dataframe{
+    border: 3px solid oklch(from var(--turqouise) 95% 5% h) !important;
+    text-align: center;
+    margin: auto;
   }
