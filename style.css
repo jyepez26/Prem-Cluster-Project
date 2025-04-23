@@ -26,20 +26,37 @@ body {
   nav{
     display: flex;
   }
-  a{
+  p{
+    text-align: center;
+    font-size: 110%;
+  }
+  button{
+    flex: 1;
+    border: none;
+    font-family: serif;
+    color: var(--turqouise);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 10px;
+    cursor: pointer;
+    background-color: rgb(102, 51, 153);
+    border-radius: 4px;
+  }
+  button:hover{
+    background-color: oklch(from var(--turqouise) 95% 5% h);
+  }
+  .Home{
     flex: 1;
     text-decoration: none;
     color: inherit;
     text-align: center;
     padding: 0.5em;
     margin-bottom: auto;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: oklch(80% 3% 200);
-  }
-  .Home{
-    flex: 1;
     border-bottom-width: 0.4em;
+    border-bottom-style: solid;
     border-bottom-color: rgb(0,191,255);
     padding-bottom: 0.202em;
   }
@@ -48,4 +65,10 @@ body {
     border-bottom-color: rgb(102, 51, 153);
     padding-bottom: 0.202em;
     background-color: oklch(from var(--turqouise) 95% 5% h)
+  }
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
   }

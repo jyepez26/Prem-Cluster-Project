@@ -85,13 +85,13 @@ body {
   a:not([type="nav"]){
     flex: 1;
     text-decoration: none;
-    color: inherit;
+    color: blue;
     text-align: center;
     padding: 0.1em;
     margin-bottom: auto;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: red;
+    border-bottom-color: oklch(80% 3% 200);
   }
   a:hover:not([type="nav"]){
     border-bottom-width: 1px;
@@ -116,4 +116,22 @@ body {
     border: 3px solid oklch(from var(--turqouise) 95% 5% h) !important;
     text-align: center;
     margin: auto;
+  }
+  button{
+    flex: 1;
+    border: none;
+    font-family: serif;
+    color: var(--turqouise);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 50px 250px;
+    cursor: pointer;
+    background-color: rgb(102, 51, 153);
+    border-radius: 4px;
+  }
+  button:hover{
+    background-color: oklch(from var(--turqouise) 95% 5% h);
   }
